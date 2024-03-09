@@ -2,6 +2,7 @@
 /node_modules
 /dist
 connect.pem
+coverage
 
 # misc
 .DS_Store
