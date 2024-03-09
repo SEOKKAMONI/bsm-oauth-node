@@ -24,8 +24,6 @@ interface Teacher extends UserInfo {
 }
 
 export class User extends BsmOauth {
-  protected user: UserInfo | undefined;
-
   async get(token: string) {
     const { data } = await this.client.post<{ user: Student | Teacher }>('/resource', {
       token,
