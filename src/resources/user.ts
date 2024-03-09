@@ -25,7 +25,7 @@ export interface Teacher extends UserInfo {
 }
 
 export class User extends BsmOauth {
-  async get(token: string) {
+  async get(token: string | null | undefined) {
     if (token == undefined) {
       throw new APIError(404, '유효하지 않은 token입니다.');
     }
@@ -38,7 +38,7 @@ export class User extends BsmOauth {
     return data.user;
   }
 
-  async getStudent(token: string) {
+  async getStudent(token: string | null | undefined) {
     if (token == undefined) {
       throw new APIError(404, '유효하지 않은 token입니다.');
     }
@@ -51,7 +51,7 @@ export class User extends BsmOauth {
     return data.user;
   }
 
-  async getTeacher(token: string) {
+  async getTeacher(token: string | null | undefined) {
     if (token == undefined) {
       throw new APIError(404, '유효하지 않은 token입니다.');
     }
@@ -64,7 +64,7 @@ export class User extends BsmOauth {
     return data.user;
   }
 
-  async getRole(token: string) {
+  async getRole(token: string | null | undefined) {
     if (token == undefined) {
       throw new APIError(404, '유효하지 않은 token입니다.');
     }

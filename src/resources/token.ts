@@ -2,7 +2,7 @@ import { BsmOauth } from '..';
 import { APIError } from '../error';
 
 export class Token extends BsmOauth {
-  async get(authToken: string) {
+  async get(authToken: string | null | undefined) {
     if (authToken == undefined || authToken == undefined) {
       throw new APIError(404, '유효하지 않은 authToken입니다.');
     }
