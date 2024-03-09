@@ -6,7 +6,7 @@ interface APIClientOptions {
 }
 
 export class APIClient {
-  protected client: AxiosInstance;
+  client: AxiosInstance;
 
   constructor({ baseURL, timeout }: APIClientOptions) {
     this.client = axios.create({ baseURL, timeout });

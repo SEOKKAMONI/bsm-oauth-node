@@ -1,4 +1,5 @@
 import { BsmOauth } from '..';
+import { APIError } from '../error';
 import { Role } from '../types/role';
 
 interface UserInfo {
@@ -9,7 +10,7 @@ interface UserInfo {
   profileUrl?: string;
 }
 
-interface Student extends UserInfo {
+export interface Student extends UserInfo {
   name: string;
   enrolledAt: number;
   grade: number;
@@ -19,54 +20,55 @@ interface Student extends UserInfo {
   cardinal: number;
 }
 
-interface Teacher extends UserInfo {
+export interface Teacher extends UserInfo {
   name: string;
 }
 
 export class User extends BsmOauth {
   async get(token: string) {
+    if (token == undefined) {
+      throw new APIError(404, '유효하지 않은 token입니다.');
+    }
+
     const { data } = await this.client.post<{ user: Student | Teacher }>('/resource', {
       token,
       ...this.options,
     });
 
-    const user: UserInfo = {
-      ...data.user,
-      profileUrl: data.user.profileUrl ?? '디폴트 이미지',
-    };
-
-    return user;
+    return data.user;
   }
 
   async getStudent(token: string) {
+    if (token == undefined) {
+      throw new APIError(404, '유효하지 않은 token입니다.');
+    }
+
     const { data } = await this.client.post<{ user: Student }>('/resource', {
       token,
       ...this.options,
     });
 
-    const student: UserInfo = {
-      ...data.user,
-      profileUrl: data.user.profileUrl ?? '디폴트 이미지',
-    };
-
-    return student;
+    return data.user;
   }
 
   async getTeacher(token: string) {
+    if (token == undefined) {
+      throw new APIError(404, '유효하지 않은 token입니다.');
+    }
+
     const { data } = await this.client.post<{ user: Teacher }>('/resource', {
       token,
       ...this.options,
     });
 
-    const teacher: UserInfo = {
-      ...data.user,
-      profileUrl: data.user.profileUrl ?? '디폴트 이미지',
-    };
-
-    return teacher;
+    return data.user;
   }
 
   async getRole(token: string) {
+    if (token == undefined) {
+      throw new APIError(404, '유효하지 않은 token입니다.');
+    }
+
     const { data } = await this.client.post<{ role: Role }>('/resource', {
       token,
       ...this.options,

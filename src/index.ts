@@ -1,4 +1,5 @@
 import * as Core from './core';
+import { APIError } from './error';
 import * as API from './resources';
 
 interface ClientOptions {
@@ -7,9 +8,13 @@ interface ClientOptions {
 }
 
 export class BsmOauth extends Core.APIClient {
-  protected options: ClientOptions;
+  options: ClientOptions;
 
   constructor({ clientId, clientSecret }: ClientOptions) {
+    if (clientId == undefined || clientSecret == undefined) {
+      throw new APIError(400, '잘못된 클라이언트 정보입니다.');
+    }
+
     super({ baseURL: 'https://auth.bssm.kro.kr/api/oauth', timeout: 15000 });
 
     this.options = {
