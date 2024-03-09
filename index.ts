@@ -1,1 +1,1 @@
-console.log("bssm oauth")
+console.log('bssm oauth');
