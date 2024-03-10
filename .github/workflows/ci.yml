@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Check quality
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        command: ['lint', 'test']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js and Yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm install -g yarn
+      - run: yarn install --frozen-lockfile
+      - name: Run commands
+        run: yarn ${{ matrix.command }}

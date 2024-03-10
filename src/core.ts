@@ -1,6 +1,6 @@
 import axios, { type AxiosInstance } from 'axios';
 import { Student, Teacher, Role } from './types';
-import { ClientOptions } from '.';
+import { ClientOptions } from './oauth';
 
 export class APIClient {
   protected client: AxiosInstance;

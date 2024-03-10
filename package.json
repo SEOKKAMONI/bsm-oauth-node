@@ -1,10 +1,16 @@
 {
-  "name": "bssm-oauth-node",
+  "name": "bsm-oauth-node",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "author": "SEOKKAMONI <sj01048260279@gmail.com>",
+  "types": "dist/index.d.ts",
+  "main": "dist/oauth.js",
+  "repository": "github:SEOKKAMONI/bsm-oauth-node",
+  "packageManager": "yarn@1.22.21",
   "scripts": {
     "test": "jest",
-    "format": "prettier --write \"**/*.{ts,js,md}\""
+    "test:coverage": "jest --watch --coverage",
+    "lint": "eslint --ext ts,js .",
+    "lint:fix": "eslint --fix --ext ts,js ."
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -19,7 +25,7 @@
     "prettier": "^3.2.5",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+    "typescript": "^4.8.2"
   },
   "dependencies": {
     "axios": "^1.6.7"

@@ -24,7 +24,6 @@ export class BsmOauth extends Core.APIClient {
   user: API.User = new API.User(this.options);
   token: API.Token = new API.Token(this.options);
 }
-
 export namespace BsmOauth {
   export import Student = Type.Student;
   export import Teacher = Type.Teacher;
