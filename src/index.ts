@@ -4,10 +4,8 @@ import * as Core from './core';
 import * as Type from './types';
 
 export interface ClientOptions {
-  clientId: string;
-  clientSecret: string;
-  baseURL: string;
-  timeout: number;
+  clientId?: string;
+  clientSecret?: string;
 }
 
 export class BsmOauth extends Core.APIClient {
@@ -20,12 +18,7 @@ export class BsmOauth extends Core.APIClient {
       throw new APIError(400, '잘못된 클라이언트 정보입니다.');
     }
 
-    this.options = {
-      clientId,
-      clientSecret,
-      baseURL: 'https://auth.bssm.kro.kr/api/oauth',
-      timeout: 15000,
-    };
+    this.options = { clientId, clientSecret };
   }
 
   user: API.User = new API.User(this.options);
