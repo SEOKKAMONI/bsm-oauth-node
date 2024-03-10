@@ -2,21 +2,39 @@
   "name": "bsm-oauth-node",
   "version": "1.0.0",
   "author": "SEOKKAMONI <sj01048260279@gmail.com>",
-  "types": "dist/index.d.ts",
-  "main": "dist/oauth.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
   "repository": "github:SEOKKAMONI/bsm-oauth-node",
   "packageManager": "yarn@1.22.21",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
+    "prepack": "yarn build",
+    "build": "yarn clean && yarn build:tsc && yarn build:js",
+    "build:tsc": "yarn tsc --emitDeclarationOnly",
+    "build:js": "node build.js",
+    "clean": "rm -rf dist",
     "test": "jest",
     "test:coverage": "jest --watch --coverage",
     "lint": "eslint --ext ts,js .",
     "lint:fix": "eslint --fix --ext ts,js ."
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.25",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
+    "esbuild": "^0.20.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
