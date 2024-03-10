@@ -2,13 +2,13 @@ import { BsmOauth } from '..';
 import { APIError } from '../error';
 
 export class Token extends BsmOauth {
-  async get(authToken: string | null | undefined) {
-    if (authToken == undefined || authToken == undefined) {
-      throw new APIError(404, '유효하지 않은 authToken입니다.');
+  async get(authCode: string | null | undefined) {
+    if (authCode == undefined || authCode == undefined) {
+      throw new APIError(404, '유효하지 않은 authCode입니다.');
     }
 
     const { data } = await this.client.post<{ token: string }>('/token', {
-      authToken,
+      authCode,
       ...this.options,
     });
 
