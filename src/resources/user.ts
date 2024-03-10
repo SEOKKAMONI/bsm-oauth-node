@@ -1,6 +1,7 @@
 import { BsmOauth } from '..';
 import { APIError } from '../error';
 import { Role } from '../types/role';
+import * as Core from '../core';
 
 interface UserInfo {
   userCode: number;
@@ -37,11 +38,11 @@ export class User extends BsmOauth {
       ...this.options,
     });
 
-    if (data.user.role === Role.STUDENT) {
+    if (Core.isStudent(data.user)) {
       return data.user;
     }
 
-    if (data.user.role === Role.TEACHER) {
+    if (Core.isTeacher(data.user)) {
       return data.user;
     }
 
