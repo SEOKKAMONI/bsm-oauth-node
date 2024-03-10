@@ -1,7 +1,7 @@
 {
   "name": "bssm-oauth-node",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "dist/oauth.js",
   "scripts": {
     "lint": "eslint .",
     "test": "jest --coverage",
