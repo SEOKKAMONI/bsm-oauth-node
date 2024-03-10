@@ -26,8 +26,8 @@
     "lint:fix": "eslint --fix --ext ts,js ."
   },
   "files": [
-    "dist",
-    "src"
+    "./dist",
+    "./src"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
