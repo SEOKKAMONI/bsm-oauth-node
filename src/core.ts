@@ -1,16 +1,19 @@
 import axios, { type AxiosInstance } from 'axios';
-import { Student, Teacher } from './resources';
-import { Role } from './types/role';
+import { Student, Teacher, Role } from './types';
 
 interface APIClientOptions {
-  baseURL: string;
-  timeout: number;
+  baseURL?: string;
+  timeout?: number;
 }
 
 export class APIClient {
-  client: AxiosInstance;
+  protected client: AxiosInstance;
+  protected options: APIClientOptions;
 
-  constructor({ baseURL, timeout }: APIClientOptions) {
+  constructor(options: APIClientOptions = {}) {
+    const { baseURL = 'https://auth.bssm.kro.kr/api/oauth', timeout = 15000 } = options;
+
+    this.options = { baseURL, timeout };
     this.client = axios.create({ baseURL, timeout });
   }
 }
