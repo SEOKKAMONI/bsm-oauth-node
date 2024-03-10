@@ -10,7 +10,7 @@
     "test": "jest",
     "test:coverage": "jest --watch --coverage",
     "lint": "eslint --ext ts,js .",
-    "fix": "eslint --fix --ext ts,js ."
+    "lint:fix": "eslint --fix --ext ts,js ."
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
