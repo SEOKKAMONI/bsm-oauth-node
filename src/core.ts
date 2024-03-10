@@ -20,8 +20,5 @@ export function isStudent(user: Student | Teacher): user is Student {
 }
 
 export function isTeacher(user: Student | Teacher): user is Teacher {
-  if (user.role === Role.TEACHER) {
-    return true;
-  }
-  return false;
+  return user.role === Role.TEACHER;
 }
