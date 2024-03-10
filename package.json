@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
+    "lint": "eslint .",
+    "test": "jest --coverage",
     "format": "prettier --write \"**/*.{ts,js,md}\""
   },
   "devDependencies": {
