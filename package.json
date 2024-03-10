@@ -1,5 +1,5 @@
 {
-  "name": "bsm-oauth-nod",
+  "name": "bsm-oauth-node",
   "version": "1.0.0",
   "author": "SEOKKAMONI <sj01048260279@gmail.com>",
   "types": "dist/index.d.ts",
