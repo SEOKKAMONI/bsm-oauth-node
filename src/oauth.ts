@@ -1,14 +1,13 @@
 import { APIError } from './error';
-import * as API from './resources';
-import * as Core from './core';
-import * as Type from './types';
+import { User, Token } from './resources';
+import { APIClient } from './core';
 
 export interface ClientOptions {
   clientId?: string;
   clientSecret?: string;
 }
 
-export class BsmOauth extends Core.APIClient {
+export class BsmOauth extends APIClient {
   protected options: ClientOptions;
 
   constructor({ clientId, clientSecret }: ClientOptions) {
@@ -21,13 +20,8 @@ export class BsmOauth extends Core.APIClient {
     this.options = { clientId, clientSecret };
   }
 
-  user: API.User = new API.User(this.options);
-  token: API.Token = new API.Token(this.options);
-}
-export namespace BsmOauth {
-  export import Student = Type.Student;
-  export import Teacher = Type.Teacher;
-  export import Role = Type.Role;
+  user: User = new User(this.options);
+  token: Token = new Token(this.options);
 }
 
 export default BsmOauth;

@@ -1,8 +1,8 @@
 import { APIError } from '../error';
 import { Student, Teacher } from '../types';
-import * as Core from '../core';
+import { APIClient, isStudent, isTeacher } from '../core';
 
-export class User extends Core.APIClient {
+export class User extends APIClient {
   async get(token: string) {
     if (token == undefined) {
       throw new APIError(404, '유효하지 않은 token입니다.');
@@ -13,11 +13,11 @@ export class User extends Core.APIClient {
       ...this.options,
     });
 
-    if (Core.isStudent(data.user)) {
+    if (isStudent(data.user)) {
       return data.user;
     }
 
-    if (Core.isTeacher(data.user)) {
+    if (isTeacher(data.user)) {
       return data.user;
     }
 

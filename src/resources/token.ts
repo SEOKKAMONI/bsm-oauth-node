@@ -1,7 +1,7 @@
 import { APIError } from '../error';
-import * as Core from '../core';
+import { APIClient } from '../core';
 
-export class Token extends Core.APIClient {
+export class Token extends APIClient {
   async get(authCode: string) {
     if (authCode == undefined) {
       throw new APIError(404, '유효하지 않은 authCode입니다.');
