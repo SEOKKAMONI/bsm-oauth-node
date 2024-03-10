@@ -1,0 +1,45 @@
+name: Changesets PR or Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: yarn
+          cache-dependency-path: yarn.lock
+          node-version: '18'
+      - run: yarn install --immutable
+      - name: Set git user
+        run: |
+          git config --global user.email "sj01048260279@gmail.com"
+          git config --global user.name "SEOKKAMONI"
+      - name: Build
+        run: yarn build
+      - name: Create Changesets Pull Request or Publish to NPM
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          version: yarn changeset version
+          tag: yarn changeset tag
+          publish: yarn changeset publish
+          title: 'release: version packages'
+          commit: |
+            release: version packages
+            Co-authored-by: SEOKKAMONI <sj01048260279.w@gmail.com>
+        env:
+          GITHUB_TOKEN: ${{ secrets.AUTHOR_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
