@@ -41,5 +41,5 @@ jobs:
             release: version packages
             Co-authored-by: SEOKKAMONI <sj01048260279.w@gmail.com>
         env:
-          GITHUB_TOKEN: ${{ secrets.AUTHOR_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
