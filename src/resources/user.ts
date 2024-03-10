@@ -18,14 +18,16 @@ export interface Student extends UserInfo {
   studentNo: number;
   isGraduate: boolean;
   cardinal: number;
+  role: Role.STUDENT;
 }
 
 export interface Teacher extends UserInfo {
   name: string;
+  role: Role.TEACHER;
 }
 
 export class User extends BsmOauth {
-  async get(token: string | null | undefined) {
+  async get(token: string) {
     if (token == undefined) {
       throw new APIError(404, '유효하지 않은 token입니다.');
     }
@@ -35,45 +37,14 @@ export class User extends BsmOauth {
       ...this.options,
     });
 
-    return data.user;
-  }
-
-  async getStudent(token: string | null | undefined) {
-    if (token == undefined) {
-      throw new APIError(404, '유효하지 않은 token입니다.');
+    if (data.user.role === Role.STUDENT) {
+      return data.user;
     }
 
-    const { data } = await this.client.post<{ user: Student }>('/resource', {
-      token,
-      ...this.options,
-    });
-
-    return data.user;
-  }
-
-  async getTeacher(token: string | null | undefined) {
-    if (token == undefined) {
-      throw new APIError(404, '유효하지 않은 token입니다.');
+    if (data.user.role === Role.TEACHER) {
+      return data.user;
     }
 
-    const { data } = await this.client.post<{ user: Teacher }>('/resource', {
-      token,
-      ...this.options,
-    });
-
     return data.user;
-  }
-
-  async getRole(token: string | null | undefined) {
-    if (token == undefined) {
-      throw new APIError(404, '유효하지 않은 token입니다.');
-    }
-
-    const { data } = await this.client.post<{ role: Role }>('/resource', {
-      token,
-      ...this.options,
-    });
-
-    return data.role;
   }
 }

@@ -3,8 +3,8 @@ import { APIError } from './error';
 import * as API from './resources';
 
 interface ClientOptions {
-  clientId: string | null | undefined;
-  clientSecret: string | null | undefined;
+  clientId: string;
+  clientSecret: string;
 }
 
 export class BsmOauth extends Core.APIClient {
