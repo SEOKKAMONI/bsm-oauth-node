@@ -2,12 +2,12 @@
   "compilerOptions": {
     "target": "es6",
     "module": "ES6",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "lib": ["es5", "es6", "dom"],
     "declaration": true,
     "outDir": "dist",
     "strict": true
   },
   "include": ["./src"],
-  "exclude": ["node_modules"]
+  "exclude": ["./node_modules", "./dist"]
 }
