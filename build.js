@@ -6,23 +6,19 @@ const baseConfig = {
   bundle: true,
   sourcemap: true,
 };
-
-esbuild
-  .build({
+Promise.all([
+  esbuild.build({
     ...baseConfig,
     format: 'cjs',
-  })
-  .catch(() => {
-    console.error('CommonJS build failed');
-    process.exit(1);
-  });
-
-esbuild
-  .build({
+    outExtension: {
+      '.js': '.cjs',
+    },
+  }),
+  esbuild.build({
     ...baseConfig,
     format: 'esm',
-  })
-  .catch(() => {
-    console.error('ESM build failed');
-    process.exit(1);
-  });
+  }),
+]).catch(() => {
+  console.log('Build failed');
+  process.exit(1);
+});
