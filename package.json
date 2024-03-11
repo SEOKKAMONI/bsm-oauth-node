@@ -4,7 +4,10 @@
   "author": "SEOKKAMONI <sj01048260279@gmail.com>",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
-  "repository": "github:SEOKKAMONI/bsm-oauth-node",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEOKKAMONI/bsm-oauth-node.git"
+  },
   "packageManager": "yarn@1.22.21",
   "type": "module",
   "exports": {
