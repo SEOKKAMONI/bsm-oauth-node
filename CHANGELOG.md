@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.4
+
+### Patch Changes
+
+- e640195: chore: package.json에 access public 추가
+
 ## 1.0.3
 
 ### Patch Changes
