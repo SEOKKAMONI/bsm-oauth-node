@@ -1,13 +1,13 @@
 import { APIError } from './error';
 import { User, Token } from './resources';
-import { APIClient } from './core';
+import { Client } from './core';
 
 export interface ClientOptions {
   clientId?: string;
   clientSecret?: string;
 }
 
-export class BsmOauth extends APIClient {
+export class BsmOauth extends Client {
   protected options: ClientOptions;
 
   constructor({ clientId, clientSecret }: ClientOptions) {
