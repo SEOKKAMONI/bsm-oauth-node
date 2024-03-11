@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.3
+
+### Patch Changes
+
+- 49b3d9c: chore: cjs도 빌드되도록 build.js를 수정해요
+
 ## 1.0.2
 
 ### Patch Changes
