@@ -14,8 +14,10 @@ export const request = async <T>(path: string, body: Object): Promise<{ data: T 
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify({ data: body }),
   });
+
+  console.info(response);
 
   return response.json();
 };
