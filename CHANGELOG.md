@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.8
+
+### Patch Changes
+
+- fcc3fad: fix: 잘못된 body 형식으로 넘겨주었던 코드를 수정해요
+
 ## 1.0.7
 
 ### Patch Changes
