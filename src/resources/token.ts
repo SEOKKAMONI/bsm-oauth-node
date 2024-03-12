@@ -17,8 +17,6 @@ export class Token extends Client {
       ...this.options,
     });
 
-    console.log(data);
-
-    return data;
+    return data.token;
   }
 }
