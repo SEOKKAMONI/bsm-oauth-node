@@ -1,14 +1,13 @@
 import { Token } from './resources/token';
 import { User } from './resources/user';
-import { Client } from './core';
 export interface ClientOptions {
     clientId?: string;
     clientSecret?: string;
 }
-export declare class BsmOauth extends Client {
+export declare class BsmOauth {
     protected options: ClientOptions;
-    constructor({ clientId, clientSecret }: ClientOptions);
     user: User;
     token: Token;
+    constructor({ clientId, clientSecret }: ClientOptions);
 }
 export default BsmOauth;

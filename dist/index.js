@@ -44,6 +44,9 @@ function isTeacher(user) {
 
 // src/resources/token.ts
 var Token = class extends Client {
+  constructor(options) {
+    super(options);
+  }
   async get(authCode) {
     if (authCode == void 0) {
       throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 authCode\uC785\uB2C8\uB2E4.");
@@ -59,6 +62,9 @@ var Token = class extends Client {
 
 // src/resources/user.ts
 var User = class extends Client {
+  constructor(options) {
+    super(options);
+  }
   async get(token) {
     if (token == void 0) {
       throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 token\uC785\uB2C8\uB2E4.");
@@ -78,15 +84,14 @@ var User = class extends Client {
 };
 
 // src/oauth.ts
-var BsmOauth = class extends Client {
+var BsmOauth = class {
   constructor({ clientId, clientSecret }) {
-    super();
-    this.user = new User(this.options);
-    this.token = new Token(this.options);
     if (clientId == void 0 || clientSecret == void 0) {
       throw new APIError(400, "\uC798\uBABB\uB41C \uD074\uB77C\uC774\uC5B8\uD2B8 \uC815\uBCF4\uC785\uB2C8\uB2E4.");
     }
     this.options = { clientId, clientSecret };
+    this.user = new User(this.options);
+    this.token = new Token(this.options);
   }
 };
 export {

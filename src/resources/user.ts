@@ -1,8 +1,13 @@
 import { APIError } from '../error';
 import { Student, Teacher } from '../types/user';
 import { Client, request, isStudent, isTeacher } from '../core';
+import { ClientOptions } from '../oauth';
 
 export class User extends Client {
+  constructor(options: ClientOptions) {
+    super(options);
+  }
+
   async get(token: string) {
     if (token == undefined) {
       throw new APIError(404, '유효하지 않은 token입니다.');
