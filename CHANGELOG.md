@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.14
+
+### Patch Changes
+
+- 6d91ba3: chore: request 코드 데이터 반환 부분에 await을 추가해요
+
 ## 1.0.13
 
 ### Patch Changes

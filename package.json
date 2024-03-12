@@ -1,6 +1,6 @@
 {
   "name": "bsm-oauth-node",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "author": "SEOKKAMONI <sj01048260279@gmail.com>",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
