@@ -54,8 +54,9 @@ var request = async (path, body) => {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ body })
+    body: JSON.stringify(body)
   });
+  console.info(response);
   return response.json();
 };
 function isStudent(user) {
