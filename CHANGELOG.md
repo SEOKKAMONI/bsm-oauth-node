@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.15
+
+### Patch Changes
+
+- 2db1c0f: fix: url을 합칠 때 /가 두 번 들어가는 오류를 수정해요
+
 ## 1.0.14
 
 ### Patch Changes
