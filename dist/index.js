@@ -27,7 +27,7 @@ var request = async (path, body) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body)
   });
-  return response.json();
+  return await response.json();
 };
 function isStudent(user) {
   return user.role === "STUDENT" /* STUDENT */;

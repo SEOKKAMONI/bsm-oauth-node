@@ -15,7 +15,7 @@ export const request = async <T>(path: string, body: unknown): Promise<T> => {
     body: JSON.stringify(body),
   });
 
-  return response.json();
+  return await response.json();
 };
 
 export function isStudent(user: Student | Teacher): user is Student {
