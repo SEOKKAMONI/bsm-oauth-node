@@ -50,7 +50,8 @@ var Token = class extends Client {
       authCode,
       ...this.options
     });
-    return data.token;
+    console.log(data);
+    return data;
   }
 };
 
