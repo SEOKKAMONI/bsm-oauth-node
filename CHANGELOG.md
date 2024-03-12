@@ -1,5 +1,14 @@
 # bsm-oauth-node
 
+## 1.0.5
+
+### Patch Changes
+
+- 646474e: chore: BsmOauth export default 내보내기 추가
+- 09cf03b: chore: release CD 업데이트
+- 52654dc: chore: axios에 adapter http를 명시해줘요
+- 4d8b336: chore: dist 폴더를 공개해요
+
 ## 1.0.4
 
 ### Patch Changes
