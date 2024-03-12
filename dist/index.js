@@ -31,9 +31,9 @@ var request = async (path, body) => {
   });
   console.info(response);
   console.info(response.status);
-  console.info(response.text());
-  console.info(response.json());
-  return response.json();
+  console.info(await response.text());
+  console.info(await response.json());
+  return await response.json();
 };
 function isStudent(user) {
   return user.role === "STUDENT" /* STUDENT */;

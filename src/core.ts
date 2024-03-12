@@ -19,10 +19,10 @@ export const request = async <T>(path: string, body: Object): Promise<T> => {
 
   console.info(response);
   console.info(response.status);
-  console.info(response.text());
-  console.info(response.json());
+  console.info(await response.text());
+  console.info(await response.json());
 
-  return response.json();
+  return await response.json();
 };
 
 export function isStudent(user: Student | Teacher): user is Student {
