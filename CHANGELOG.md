@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.13
+
+### Patch Changes
+
+- 8fff832: chore: request 코드에 headers를 추가해요
+
 ## 1.0.12
 
 ### Patch Changes
