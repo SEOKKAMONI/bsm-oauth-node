@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.10
+
+### Patch Changes
+
+- 16d21ab: chore: api 에러 추적을 위한 로깅을 추가해요
+
 ## 1.0.9
 
 ### Patch Changes
