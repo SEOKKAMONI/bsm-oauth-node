@@ -1,5 +1,12 @@
 # bsm-oauth-node
 
+## 1.0.17
+
+### Patch Changes
+
+- f428045: feat: READEME.md에 라이브러리에 대한 설명 작성
+- 2a55423: chore: token data 로깅을 삭제해요
+
 ## 1.0.16
 
 ### Patch Changes
