@@ -1,5 +1,5 @@
 import { APIError } from '../error';
-import { Client, instance } from '../core';
+import { Client, request } from '../core';
 
 export class Token extends Client {
   async get(authCode: string) {
@@ -7,7 +7,7 @@ export class Token extends Client {
       throw new APIError(404, '유효하지 않은 authCode입니다.');
     }
 
-    const { data } = await instance.post<{ token: string }>('/token', {
+    const { data } = await request<{ token: string }>('/token', {
       authCode,
       ...this.options,
     });

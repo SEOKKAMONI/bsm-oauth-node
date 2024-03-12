@@ -1,6 +1,6 @@
 import { APIError } from '../error';
 import { Student, Teacher } from '../types/user';
-import { Client, instance, isStudent, isTeacher } from '../core';
+import { Client, request, isStudent, isTeacher } from '../core';
 
 export class User extends Client {
   async get(token: string) {
@@ -8,7 +8,7 @@ export class User extends Client {
       throw new APIError(404, '유효하지 않은 token입니다.');
     }
 
-    const { data } = await instance.post<{ user: Student | Teacher }>('/resource', {
+    const { data } = await request<{ user: Student | Teacher }>('/resource', {
       token,
       ...this.options,
     });
