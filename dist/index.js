@@ -27,9 +27,8 @@ var request = async (path, body) => {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ data: body })
+    body: JSON.stringify({ body })
   });
-  console.info(response);
   return response.json();
 };
 function isStudent(user) {
@@ -45,7 +44,7 @@ var Token = class extends Client {
     if (authCode == void 0) {
       throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 authCode\uC785\uB2C8\uB2E4.");
     }
-    const { data } = await request("/token", {
+    const data = await request("/token", {
       authCode,
       ...this.options
     });
@@ -59,7 +58,7 @@ var User = class extends Client {
     if (token == void 0) {
       throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 token\uC785\uB2C8\uB2E4.");
     }
-    const { data } = await request("/resource", {
+    const data = await request("/resource", {
       token,
       ...this.options
     });

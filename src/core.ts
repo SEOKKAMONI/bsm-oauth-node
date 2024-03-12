@@ -8,16 +8,14 @@ export class Client {
   }
 }
 
-export const request = async <T>(path: string, body: Object): Promise<{ data: T }> => {
+export const request = async <T>(path: string, body: Object): Promise<T> => {
   const response = await fetch(`https://auth.bssm.kro.kr/api/oauth/${path}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ data: body }),
+    body: JSON.stringify({ body }),
   });
-
-  console.info(response);
 
   return response.json();
 };
