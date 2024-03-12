@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.7
+
+### Patch Changes
+
+- 464b9b7: chore: request 요청 body 형식을 변경해요
+
 ## 1.0.6
 
 ### Patch Changes
