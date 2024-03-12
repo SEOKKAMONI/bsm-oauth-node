@@ -1,5 +1,5 @@
 import { APIError } from '../error';
-import { Student, Teacher } from '../types';
+import { Student, Teacher } from '../types/user';
 import { Client, instance, isStudent, isTeacher } from '../core';
 
 export class User extends Client {

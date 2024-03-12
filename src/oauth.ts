@@ -1,5 +1,6 @@
 import { APIError } from './error';
-import { User, Token } from './resources';
+import { Token } from './resources/token';
+import { User } from './resources/user';
 import { Client } from './core';
 
 export interface ClientOptions {

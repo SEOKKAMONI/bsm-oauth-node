@@ -1,6 +1,5 @@
 # production
 /node_modules
-/dist
 connect.pem
 coverage
 

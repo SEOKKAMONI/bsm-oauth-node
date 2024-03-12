@@ -1,5 +1,5 @@
 import axios, { type AxiosInstance } from 'axios';
-import { Student, Teacher, Role } from './types';
+import { Student, Teacher, Role } from './types/user';
 import { ClientOptions } from './oauth';
 
 export class Client {
