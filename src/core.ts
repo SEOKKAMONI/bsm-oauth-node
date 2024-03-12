@@ -18,6 +18,9 @@ export const request = async <T>(path: string, body: Object): Promise<T> => {
   });
 
   console.info(response);
+  console.info(response.status);
+  console.info(response.text());
+  console.info(response.json());
 
   return response.json();
 };

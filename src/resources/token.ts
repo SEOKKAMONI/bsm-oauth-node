@@ -7,6 +7,8 @@ export class Token extends Client {
       throw new APIError(404, '유효하지 않은 authCode입니다.');
     }
 
+    console.info('body', authCode, this.options);
+
     const data = await request<{ token: string }>('/token', {
       authCode,
       ...this.options,
