@@ -12,6 +12,7 @@ export class Client {
 
 export const instance: AxiosInstance = axios.create({
   baseURL: 'https://auth.bssm.kro.kr/api/oauth',
+  adapter: 'http',
 });
 
 export function isStudent(user: Student | Teacher): user is Student {
