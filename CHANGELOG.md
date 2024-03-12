@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.9
+
+### Patch Changes
+
+- dbd14ae: chore: request의 response 로깅을 추가해요
+
 ## 1.0.8
 
 ### Patch Changes
