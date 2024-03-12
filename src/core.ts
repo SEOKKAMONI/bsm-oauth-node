@@ -8,21 +8,14 @@ export class Client {
   }
 }
 
-export const request = async <T>(path: string, body: Object): Promise<T> => {
+export const request = async <T>(path: string, body: unknown): Promise<T> => {
   const response = await fetch(`https://auth.bssm.kro.kr/api/oauth/${path}`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
 
-  console.info(response);
-  console.info(response.status);
-  console.info(await response.text());
-  console.info(await response.json());
-
-  return await response.json();
+  return response.json();
 };
 
 export function isStudent(user: Student | Teacher): user is Student {
