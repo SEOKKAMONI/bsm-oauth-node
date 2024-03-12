@@ -22,7 +22,7 @@ jobs:
           cache: yarn
           cache-dependency-path: yarn.lock
           node-version: '18'
-      - run: yarn install --immutable
+      - run: yarn install --frozen-lockfile
       - name: Set git user
         run: |
           git config --global user.email "sj01048260279@gmail.com"
