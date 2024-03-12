@@ -27,8 +27,8 @@ const bsmOauth = new BsmOauth({
 });
 
 const login = async (authCode: string) => {
-  const token = bsmOauth.token.get(authCode);
-  const user = bsmOauth.user.get(token);
+  const token = await bsmOauth.token.get(authCode);
+  const user = await bsmOauth.user.get(token);
 
   console.log(user); // 유저의 정보
 };
