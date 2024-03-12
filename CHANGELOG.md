@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.12
+
+### Patch Changes
+
+- d9d19ff: chore: request 코드에 await을 추가해요
+
 ## 1.0.11
 
 ### Patch Changes
