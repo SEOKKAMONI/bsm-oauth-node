@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.11
+
+### Patch Changes
+
+- f29389c: fix: client options가 메소드에 전달되지 않는 문제를 수정해요
+
 ## 1.0.10
 
 ### Patch Changes
