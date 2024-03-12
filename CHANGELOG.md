@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.6
+
+### Patch Changes
+
+- 70332c4: fix: axios를 node-fetch로 마이그레이션해요
+
 ## 1.0.5
 
 ### Patch Changes
