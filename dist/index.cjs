@@ -49,7 +49,8 @@ var Client = class {
   }
 };
 var request = async (path, body) => {
-  const response = await fetch(`https://auth.bssm.kro.kr/api/oauth/${path}`, {
+  const url = "https://auth.bssm.kro.kr/api/oauth".concat(path);
+  const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body)
