@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.0.16
+
+### Patch Changes
+
+- b9f55bb: chore: token data 로깅을 추가해요
+
 ## 1.0.15
 
 ### Patch Changes
