@@ -1,4 +1,4 @@
-# bsm-oauth-node
+# [bsm-oauth-node](https://www.npmjs.com/package/bsm-oauth-node?activeTab=readme)
 
 > bsm-oauth-node는 BSM Oauth를 간편하게 개발할 수 있도록 도와주는 라이브러리입니다.
 
