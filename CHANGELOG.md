@@ -1,5 +1,15 @@
 # bsm-oauth-node
 
+## 1.1.0
+
+### Minor Changes
+
+- 9e0aeeb: 예외 처리를 추가해요
+
+### Patch Changes
+
+- 1328f2a: feat: Role enum을 export 해요
+
 ## 1.0.17
 
 ### Patch Changes
