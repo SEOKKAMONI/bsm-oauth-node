@@ -21,7 +21,9 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   BsmOauth: () => BsmOauth,
-  default: () => BsmOauth
+  default: () => BsmOauth,
+  isStudent: () => isStudent,
+  isTeacher: () => isTeacher
 });
 module.exports = __toCommonJS(src_exports);
 

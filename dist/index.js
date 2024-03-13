@@ -100,6 +100,8 @@ var BsmOauth = class {
 };
 export {
   BsmOauth,
-  BsmOauth as default
+  BsmOauth as default,
+  isStudent,
+  isTeacher
 };
 //# sourceMappingURL=index.js.map
