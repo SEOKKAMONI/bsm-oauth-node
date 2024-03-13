@@ -1,5 +1,6 @@
 import { Student, Teacher, Role } from './types/user';
 import { ClientOptions } from './oauth';
+
 export class Client {
   protected options: ClientOptions;
 
