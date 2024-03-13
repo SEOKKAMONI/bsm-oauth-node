@@ -1,5 +1,11 @@
 # bsm-oauth-node
 
+## 1.1.1
+
+### Patch Changes
+
+- 8b25b7c: chore: isStudent, isTeacher를 export 해요
+
 ## 1.1.0
 
 ### Minor Changes
