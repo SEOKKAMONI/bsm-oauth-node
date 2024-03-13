@@ -70,14 +70,19 @@ var Token = class extends Client {
     super(options);
   }
   async get(authCode) {
-    if (authCode == void 0) {
-      throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 authCode\uC785\uB2C8\uB2E4.");
+    try {
+      if (authCode == void 0) {
+        throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 authCode\uC785\uB2C8\uB2E4.");
+      }
+      const data = await request("/token", {
+        authCode,
+        ...this.options
+      });
+      return data.token;
+    } catch (error) {
+      console.error(error);
+      throw error;
     }
-    const data = await request("/token", {
-      authCode,
-      ...this.options
-    });
-    return data.token;
   }
 };
 
@@ -87,20 +92,25 @@ var User = class extends Client {
     super(options);
   }
   async get(token) {
-    if (token == void 0) {
-      throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 token\uC785\uB2C8\uB2E4.");
-    }
-    const data = await request("/resource", {
-      token,
-      ...this.options
-    });
-    if (isStudent(data.user)) {
+    try {
+      if (token == void 0) {
+        throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 token\uC785\uB2C8\uB2E4.");
+      }
+      const data = await request("/resource", {
+        token,
+        ...this.options
+      });
+      if (isStudent(data.user)) {
+        return data.user;
+      }
+      if (isTeacher(data.user)) {
+        return data.user;
+      }
       return data.user;
+    } catch (error) {
+      console.error(error);
+      throw error;
     }
-    if (isTeacher(data.user)) {
-      return data.user;
-    }
-    return data.user;
   }
 };
 

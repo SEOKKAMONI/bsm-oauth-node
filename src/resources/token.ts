@@ -8,15 +8,20 @@ export class Token extends Client {
   }
 
   async get(authCode: string) {
-    if (authCode == undefined) {
-      throw new APIError(404, '유효하지 않은 authCode입니다.');
+    try {
+      if (authCode == undefined) {
+        throw new APIError(404, '유효하지 않은 authCode입니다.');
+      }
+
+      const data = await request<{ token: string }>('/token', {
+        authCode,
+        ...this.options,
+      });
+
+      return data.token;
+    } catch (error) {
+      console.error(error);
+      throw error;
     }
-
-    const data = await request<{ token: string }>('/token', {
-      authCode,
-      ...this.options,
-    });
-
-    return data.token;
   }
 }

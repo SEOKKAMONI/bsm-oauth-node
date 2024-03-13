@@ -8,7 +8,10 @@ export class Client {
   }
 }
 
-export const request = async <T>(path: string, body: unknown): Promise<T> => {
+export const request = async <T>(
+  path: string,
+  body: Record<string, unknown>
+): Promise<T> => {
   const url = 'https://auth.bssm.kro.kr/api/oauth'.concat(path);
   const response = await fetch(url, {
     method: 'POST',
