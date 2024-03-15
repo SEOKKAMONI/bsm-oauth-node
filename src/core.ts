@@ -30,3 +30,14 @@ export function isStudent(user: Student | Teacher): user is Student {
 export function isTeacher(user: Student | Teacher): user is Teacher {
   return user.role === Role.TEACHER;
 }
+
+export function isFalsy(value: any) {
+  return (
+    value === false ||
+    value === null ||
+    value === 0 ||
+    value === '' ||
+    value === undefined ||
+    isNaN(value)
+  );
+}
