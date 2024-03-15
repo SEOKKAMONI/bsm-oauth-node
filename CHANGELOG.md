@@ -1,5 +1,12 @@
 # bsm-oauth-node
 
+## 1.1.2
+
+### Patch Changes
+
+- 3905d71: feat: bsm-oauth-node 라이브러리의 예제 코드를 제공해요
+- 31a76ec: chore: APIError를 export 해요
+
 ## 1.1.1
 
 ### Patch Changes
