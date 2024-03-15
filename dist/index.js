@@ -99,6 +99,7 @@ var BsmOauth = class {
   }
 };
 export {
+  APIError,
   BsmOauth,
   BsmOauth as default,
   isStudent,

@@ -20,6 +20,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
+  APIError: () => APIError,
   BsmOauth: () => BsmOauth,
   default: () => BsmOauth,
   isStudent: () => isStudent,
