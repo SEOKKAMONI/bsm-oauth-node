@@ -1,18 +1,20 @@
-import { BsmOauth } from 'bsm-oauth-node';
-import { APIError } from '../error';
+import { BsmOauth, APIError } from 'bsm-oauth-node';
+
+import 'dotenv/config';
 
 const bsmOauth = new BsmOauth({
-  clientId: '클라이언트 아이디',
-  clientSecret: '클라이언트 시크릿 키',
+  clientId: process.env.BSM_AUTH_CLIENT_ID,
+  clientSecret: process.env.BSM_AUTH_CLIENT_SECRET,
 });
 
 describe('토큰 조회', () => {
-  test('유효한 authCode를 제공하면 토큰을 반환해요.', async () => {
-    const token = await bsmOauth.token.get('authCode');
+  // NOTE: authCode를 테스트할 때마다 받아야 하는 불편함이 있기에 다른 방안이 생길 때까지 주석 처리를 해요.
+  // test('유효한 authCode를 제공하면 토큰을 반환해요.', async () => {
+  //   const token = await bsmOauth.token.get('authCode');
 
-    expect(token).not.toBeNull();
-    expect(token).toBeDefined();
-  });
+  //   expect(token).not.toBeNull();
+  //   expect(token).toBeDefined();
+  // });
 
   test('authCode를 제공하지 않으면 에러가 발생해요.', async () => {
     try {
