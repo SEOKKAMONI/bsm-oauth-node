@@ -7,3 +7,4 @@ export declare class Client {
 export declare const request: <T>(path: string, body: Record<string, unknown>) => Promise<T>;
 export declare function isStudent(user: Student | Teacher): user is Student;
 export declare function isTeacher(user: Student | Teacher): user is Teacher;
+export declare function isFalsy(value: any): boolean;

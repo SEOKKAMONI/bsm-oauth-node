@@ -66,6 +66,9 @@ function isStudent(user) {
 function isTeacher(user) {
   return user.role === "TEACHER" /* TEACHER */;
 }
+function isFalsy(value) {
+  return value === false || value === null || value === 0 || value === "" || value === void 0 || isNaN(value);
+}
 
 // src/resources/token.ts
 var Token = class extends Client {
@@ -74,7 +77,7 @@ var Token = class extends Client {
   }
   async get(authCode) {
     try {
-      if (authCode == void 0) {
+      if (isFalsy(authCode)) {
         throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 authCode\uC785\uB2C8\uB2E4.");
       }
       const data = await request("/token", {
@@ -96,7 +99,7 @@ var User = class extends Client {
   }
   async get(token) {
     try {
-      if (token == void 0) {
+      if (isFalsy(token)) {
         throw new APIError(404, "\uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 token\uC785\uB2C8\uB2E4.");
       }
       const data = await request("/resource", {

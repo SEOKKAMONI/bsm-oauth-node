@@ -1,5 +1,5 @@
 import { APIError } from '../error';
-import { Client, request } from '../core';
+import { Client, request, isFalsy } from '../core';
 import { ClientOptions } from '../oauth';
 
 export class Token extends Client {
@@ -9,7 +9,7 @@ export class Token extends Client {
 
   async get(authCode: string) {
     try {
-      if (authCode == undefined) {
+      if (isFalsy(authCode)) {
         throw new APIError(404, '유효하지 않은 authCode입니다.');
       }
 
