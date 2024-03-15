@@ -6,7 +6,7 @@
     "start": "nodemon --exec babel-node ./src/basic.js"
   },
   "dependencies": {
-    "bsm-oauth-node": "^1.1.1",
+    "bsm-oauth-node": "^1.1.2",
     "express": "^4.18.2"
   },
   "devDependencies": {

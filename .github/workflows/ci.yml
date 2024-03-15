@@ -18,6 +18,9 @@ jobs:
     strategy:
       matrix:
         command: ['lint', 'test']
+    env:
+      BSM_AUTH_CLIENT_ID: ${{ secrets.BSM_AUTH_CLIENT_ID }}
+      BSM_AUTH_CLIENT_SECRET: ${{ secrets.BSM_AUTH_CLIENT_SECRET }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js and Yarn
