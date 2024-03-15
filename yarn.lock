@@ -1488,6 +1488,13 @@ bsm-oauth-node@^1.1.2:
   resolved "https://registry.yarnpkg.com/bsm-oauth-node/-/bsm-oauth-node-1.1.2.tgz#a5b758b56191152b980ea4f794a7f93d029d6083"
   integrity sha512-9Toub4M95ZKl9r+lUIJLGgNFoS+PZkYacJ/Vm42NUnKjFMgak+Xv8tZfGdgoo1uioUTt11QivxVoOMPfcm/21Q==
 
+bsm-oauth-node@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/bsm-oauth-node/-/bsm-oauth-node-1.1.3.tgz#726b53c10db92c9de8f69f567588f950edd39af5"
+  integrity sha512-v9396JAj/LssAWr9hpw9J0xBVCh9iviNS37l+oRjMXCJq18Zo88Iesaxh5yKfonIjJotT8UPdw6uGH3vNSC4HA==
+  dependencies:
+    bsm-oauth-node "^1.1.2"
+
 buffer-from@^1.0.0:
   version "1.1.2"
   resolved "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz"
