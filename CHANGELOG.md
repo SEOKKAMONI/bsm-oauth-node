@@ -1,5 +1,13 @@
 # bsm-oauth-node
 
+## 1.1.3
+
+### Patch Changes
+
+- bb308d3: feat: isFalsy를 추가해요
+- Updated dependencies [bb308d3]
+  - bsm-oauth-node@1.1.3
+
 ## 1.1.2
 
 ### Patch Changes
