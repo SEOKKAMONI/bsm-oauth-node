@@ -18,10 +18,10 @@ describe('토큰 조회', () => {
     try {
       await bsmOauth.token.get('');
     } catch (error) {
-      const errors = error as APIError;
+      const apiError = error as APIError;
 
-      expect(errors).toBeInstanceOf(APIError);
-      expect(errors.message).toBe('[404]: 유효하지 않은 authCode입니다.');
+      expect(apiError).toBeInstanceOf(APIError);
+      expect(apiError.message).toBe('[404]: 유효하지 않은 authCode입니다.');
     }
   });
 });
