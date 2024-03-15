@@ -12,7 +12,8 @@ const bsmOauth = new BsmOauth({
 app.post('/oauth/bsm', async (req, res) => {
   const { authCode } = req.query;
 
-  const user = await bsmOauth.user.get('');
+  const token = await bsmOauth.token.get(authCode);
+  const user = await bsmOauth.user.get(token);
 
   if (isStudent(user)) {
     return res.status(200).json(user);
