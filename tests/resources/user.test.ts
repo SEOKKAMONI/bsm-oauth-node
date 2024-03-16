@@ -7,7 +7,7 @@ const bsmOauth = new BsmOauth({
   clientSecret: process.env.BSM_AUTH_CLIENT_SECRET,
 });
 
-describe('유저 조회', () => {
+describe('user', () => {
   test('token을 제공하지 않으면 에러가 발생해요.', async () => {
     try {
       await bsmOauth.user.get('');

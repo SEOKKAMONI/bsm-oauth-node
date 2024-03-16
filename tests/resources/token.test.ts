@@ -7,7 +7,7 @@ const bsmOauth = new BsmOauth({
   clientSecret: process.env.BSM_AUTH_CLIENT_SECRET,
 });
 
-describe('토큰 조회', () => {
+describe('token', () => {
   test('authCode를 제공하지 않으면 에러가 발생해요.', async () => {
     try {
       await bsmOauth.token.get('');
