@@ -1,5 +1,15 @@
 # bsm-oauth-node
 
+## 1.1.4
+
+### Patch Changes
+
+- fecd939: test: core 테스트 코드를 추가해요
+- 2844181: test: user resource 테스트 코드를 추가해요
+- Updated dependencies [fecd939]
+- Updated dependencies [2844181]
+  - bsm-oauth-node@1.1.4
+
 ## 1.1.3
 
 ### Patch Changes
